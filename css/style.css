@@ -35,7 +35,7 @@ img {
 header {
   grid-area: header;
   background: linear-gradient(to right, var(--primary), var(--light));
-  padding: 8rem 5rem;
+  padding: 10rem 5rem;
   text-align: center;
   color: white;
   display: flex;
@@ -48,7 +48,6 @@ header {
     font-weight: 300;
     letter-spacing: 3rem; }
   header p {
-    font-size: 2rem;
     letter-spacing: 0.5rem; }
 
 .picture {

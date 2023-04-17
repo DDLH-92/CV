@@ -3,6 +3,7 @@
 @import "classes";
 @import "utils";
 @import "animations";
+@import "media-queries";
 
 .grid-container {
   display: grid;
@@ -11,7 +12,15 @@
     "aside main" 1fr
     "footer footer" auto
     / 350px auto;
-  min-height: 100vh;
+    @include xs {
+    grid:
+    "header" auto
+    "main" auto
+    "picture" auto
+    "aside" auto
+    "footer" auto
+    / auto;
+    }
 }
 
 header {
@@ -24,11 +33,17 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include xs {
+    padding: 5rem 2rem;
+  }
   h1 {
     font-size: 6rem;
     line-height: 8rem;
     font-weight: 300;
     letter-spacing: 3rem;
+    @include xs {
+      font-size: 4rem;
+    }
   }
   p {
     letter-spacing: 0.5rem;
@@ -126,6 +141,9 @@ aside {
 main {
   grid-area: main;
   padding: 5rem;
+  @include xs {
+    padding: 5rem 1.5rem;
+  }
   h2 {
     margin-bottom: 4rem;
   }
@@ -173,6 +191,9 @@ footer {
   color: white;
   padding: 5rem;
   background: var(--text);
+  @include xs {
+    padding: 5rem 1.5rem;
+  }
   h2 {
     margin-bottom: 3rem;
   }
@@ -208,6 +229,9 @@ footer {
       outline: 0;
       border: 0;
       min-width: 400px;
+      @include xs{
+        min-width: 200px;
+      }
       padding: 1rem 2rem;
       line-height: 2rem;
       &::placeholder {
